@@ -1,0 +1,14 @@
+<label>Search: <input ng-model="searchText"></label>
+
+<table>
+  <tr>
+    <td style="background-color:#b5d592"><b>Album</b>    </td>
+    <td style="background-color:#b5d592"><b>Artist</b></td>
+  </tr>
+  <tr ng-repeat="album in albums | filter:searchText | limitTo:20 track by $index  ">
+    <td ng-if="$odd" style="background-color:#f1f1f1">{{ album.albumTitle }}</td>
+    <td ng-if="$even">{{ album.albumTitle }}</td>
+    <td ng-if="$odd" style="background-color:#f1f1f1">{{ album.artistName }}</td>
+    <td ng-if="$even">{{ album.artistName }}</td>
+  </tr>
+</table>

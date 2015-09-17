@@ -7,16 +7,15 @@ See Martin Fowler's definition for data transfer object [ here ](http://martinfo
 
 # Requirements 
 
- * Java Jdk
+ * Java Jdk or Jre
  * Tomcat 
  * Gradle
  * MySQL
  * Grunt 
  * Bower 
+ * NodeJs and npm
 
 # Backend 
-
-
 
 In order to run:
 
@@ -34,7 +33,11 @@ Install MySQL: (fedora)
 
 ```
 dnf install mysql-community-server
+```
 
+Import database dump:
+
+```
 mysql -u root -p 
 CREATE USER 'songuser'@'localhost' IDENTIFIED BY 'songpass';
 GRANT ALL PRIVILEGES ON songdb.* TO 'songuser'@'localhost' WITH GRANT OPTION;
@@ -42,6 +45,27 @@ FLUSH PRIVILEGES;
 exit;
 
 mysql -u root -p < songdb_schema.sql 
+```
+
+# Frontend
+
+Install required npm and bower packages
+
+```
+cd frontend 
+npm install
+bower install
+```
+
+Launch app
+
+```
+grunt serve
+```
+
+# Run Karma Tests 
+```
+grunt test
 ```
 
 
