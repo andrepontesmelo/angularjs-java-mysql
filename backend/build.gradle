@@ -1,0 +1,19 @@
+apply plugin: 'war'
+
+defaultTasks 'clean', 'build'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'mysql:mysql-connector-java:5.1.13'
+    compile 'com.sun.jersey:jersey-server:1.17.1'
+    compile 'com.sun.jersey:jersey-servlet:1.17.1'
+    compile 'com.sun.jersey:jersey-json:1.17.1'
+    compile 'javax.xml:jaxb-api:2.1'
+    testCompile 'junit:junit:3.8.1'
+}
+
+//noinspection GroovyAssignabilityCheck
+war.baseName "songrestapi"
